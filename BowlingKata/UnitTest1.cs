@@ -37,7 +37,7 @@ namespace BowlingKata
 		[TestMethod]
 		public void roll_strike_then_5_score_20()
 		{
-			_bowling.Roll(10);
+			GivenStrike();
 			_bowling.Roll(5);
 			TheResultShouldBe(2, 15, 20);
 		}
@@ -45,7 +45,7 @@ namespace BowlingKata
 		[TestMethod]
 		public void roll_strike_then_0_5_score_20()
 		{
-			_bowling.Roll(10);
+			GivenStrike();
 			_bowling.Roll(0);
 			_bowling.Roll(5);
 			TheResultShouldBe(3, 15, 20);
@@ -99,6 +99,11 @@ namespace BowlingKata
 			_bowling.Roll(8);
 			_bowling.Roll(6);
 			TheResultShouldBe(10, 5, 133);
+		}
+
+		private void GivenStrike()
+		{
+			_bowling.Roll(10);
 		}
 
 		private void TheResultShouldBe(int currentFrame, int firstFrameScore, int totalScore)
