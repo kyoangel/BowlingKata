@@ -5,7 +5,7 @@ namespace BowlingKata
 	[TestClass]
 	public class BowlingTests
 	{
-		private Bowling _bowling = new Bowling();
+		private readonly Bowling _bowling = new Bowling();
 
 		[TestMethod]
 		public void Roll_0_score_0()
